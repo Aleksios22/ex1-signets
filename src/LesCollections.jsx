@@ -1,21 +1,19 @@
 import Collection from './Collection';
+import tabCollections from './Data/donnes.json';
 
 function LesCollections() {
 
-  // const source = "";
-
   return (
-    <div>
-        <h2>Les collections</h2>
+    <div className="listeCollections">
         <ul>
-          <Collection />
-          <Collection />
-          <Collection />
-          <Collection />
-          <Collection />
-          <Collection />
-          <Collection />
-          <Collection />
+        {tabCollections.map((clt) => (
+          <Collection 
+            id={clt.id}
+            titre={clt.titre}
+            couleur={clt.couleur}
+            date={clt.date}
+            />
+          ))}
         </ul>
     </div>
   );
